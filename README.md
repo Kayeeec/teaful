@@ -583,7 +583,7 @@ const [store, setStore] = useStore();
 setStore({ count: 10, username: "" });
 ```
 
-If you have to update several properties and you don't want to disturb the rest of the components that are using other store properties you can create a helper with `getStore`.
+If you have to update several properties and you don't want to disturb the rest of the components that are using other store properties you can create a helper with `setStore`.
 
 ```js
 export const { useStore, setStore } = createStore(initialStore);
@@ -599,10 +599,10 @@ And use it wherever you want:
 
 ```js
 // 🤩
-import { setStore } from "./store";
+import { setFragmentedStore } from "./store";
 
 // ...
-setStore({ count: 10, username: "" });
+setFragmentedStore({ count: 10, username: "" });
 ```
 
 ### Define calculated properties
